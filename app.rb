@@ -2,6 +2,15 @@ require 'bundler'
 require 'kconv'
 Bundler.require
 
+if File.exist?("database.yml")
+  #Local
+  ActiveRecord::Base.configurations = YAML.load_file('database.yml')
+  ActiveRecord::Base.establish_connection(:development)
+else
+  #Heroku
+  ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
+end
+
 module Api
 
   class Application < Sinatra::Base
@@ -45,7 +54,7 @@ module Api
     end
 
     # get all entries
-    # /entries?limit=0&skip=30
+    # /entries?skip=0&limit=30
     get '/entries' do
     	content_type :json, :charset => 'utf-8'
 
