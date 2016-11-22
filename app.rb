@@ -41,7 +41,7 @@ module Api
     end
 
     # get member's entries
-    # /member/entries?id[]=1&id[]=2&limit=0&skip=30
+    # /member/entries?ids[]=1&ids[]=2&skip=0&limit=30
     get '/member/entries' do
       #文字コード指定してやらないと日本語が化ける
     	content_type :json, :charset => 'utf-8'
