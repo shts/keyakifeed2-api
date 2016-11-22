@@ -4,7 +4,7 @@
 # ひとまず、config.ruにActiveRecord::ConnectionAdapters::ConnectionManagementを読み込ませておくと解決する。
 # 詳細は勉強中です。
 # http://qiita.com/myokkie/items/6f65db5d53f19d34a27c
-require 'app'
+require_relative 'app'
 
 use ActiveRecord::ConnectionAdapters::ConnectionManagement
 
