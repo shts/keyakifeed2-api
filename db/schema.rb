@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161122141956) do
+ActiveRecord::Schema.define(version: 20161123075950) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,25 @@ ActiveRecord::Schema.define(version: 20161122141956) do
     t.datetime "updated_at",     null: false
   end
 
+  create_table "fcms", force: :cascade do |t|
+    t.string   "reg_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "matomes", force: :cascade do |t|
+    t.string   "feed_title"
+    t.string   "feed_url"
+    t.string   "feed_last_modified"
+    t.string   "entry_title"
+    t.string   "entry_url"
+    t.datetime "entry_published"
+    t.string   "image_url_list"
+    t.string   "entry_categories"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
   create_table "members", force: :cascade do |t|
     t.string   "name_main"
     t.string   "name_sub"
@@ -47,6 +66,16 @@ ActiveRecord::Schema.define(version: 20161122141956) do
     t.string   "message_url"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "reports", force: :cascade do |t|
+    t.string   "title"
+    t.string   "url"
+    t.string   "thumbnail_url"
+    t.date     "published"
+    t.string   "image_url_list"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
 end
