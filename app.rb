@@ -27,7 +27,8 @@ module Api
     # -----------------------------------------------------
     # get member
     get '/members' do
-      Api::Member.all.to_json
+      # メンバー生成時にkeyがずれたのでここでorder
+      Api::Member.all.order(:key).to_json
     end
 
     # get member
