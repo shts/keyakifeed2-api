@@ -8,7 +8,7 @@ if File.exist?("database.yml")
   ActiveRecord::Base.establish_connection(:development)
 else
   #Heroku
-  ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
+  ActiveRecord::Base.establish_connection(ENV['HEROKU_POSTGRESQL_SILVER_URL'])
 end
 
 module Api
