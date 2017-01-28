@@ -1,7 +1,7 @@
 json.id @entry.id
 json.title @entry.title
 json.url @entry.url
-json.published2 @entry.published2
+json.published @entry.published
 json.original_raw_image_urls @entry.original_raw_image_urls
 json.original_thumbnail_urls @entry.original_thumbnail_urls
 json.uploaded_raw_image_urls @entry.uploaded_raw_image_urls
