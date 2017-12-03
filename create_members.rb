@@ -63,7 +63,8 @@ def parse(num)
     data[:name_sub] = normalize doc.css('.box-profile_text').css('.furigana').text
     # 公式バグ
     #puts doc.css('.box-profile_text').css('.en').text.gsub(/(\r\n|\r|\n|\f)/,"")
-    data[:image_url] = BaseUrl + doc.css('.box-profile_img > img')[0][:src]
+    # data[:image_url] = BaseUrl + doc.css('.box-profile_img > img')[0][:src]
+    data[:image_url] = doc.css('.box-profile_img > img')[0][:src]
     data[:message_url] = BaseUrl + doc.css('.box-msg').css('.slide').css('img')[0][:src]
 
     counter = 0
